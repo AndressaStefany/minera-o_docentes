@@ -1,5 +1,9 @@
 \documentclass[conference,harvard,brazil,english]{sbatex}
 \usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{float}
+
 \usepackage{ae}
 %
 % LaTeX2e class SBATeX
@@ -106,6 +110,33 @@ Neste trabalho foi utilizado o Portal de Dados Abertos da Universidade Federal d
 \subsection{Estratégia da Classificação}
 
 \subsection{Resultados}
+
+Classificação dois a dois
+
+\begin{figure}
+     \centering
+     \subfloat[][a]{\includegraphics[scale=0.45]{figs/2_vx_3}\label{<figure2>}}\\
+     \subfloat[][b]{\includegraphics[scale=0.45]{figs/2_vx_4}\label{<figure1>}}\\
+     \subfloat[][c]{\includegraphics[scale=0.45]{figs/2_vx_5}\label{<figure2>}}\\
+     \subfloat[][d]{\includegraphics[scale=0.45]{figs/2_vx_6}\label{<figure1>}}\\
+     \caption{Legenda}
+     \label{steady_state}
+\end{figure}
+\begin{figure}
+     \centering
+     \subfloat[][e]{\includegraphics[scale=0.45]{figs/3_vx_4}\label{<figure2>}}\\
+     \subfloat[][f]{\includegraphics[scale=0.45]{figs/3_vx_5}\label{<figure1>}}\\
+     \subfloat[][g]{\includegraphics[scale=0.45]{figs/3_vx_6}\label{<figure2>}}\\
+     \subfloat[][h]{\includegraphics[scale=0.45]{figs/4_vx_5}\label{<figure1>}}\\
+     \caption{Legenda}
+     \label{steady_state}
+\end{figure}
+
+\begin{figure}
+     \subfloat[][i]{\includegraphics[scale=0.45]{figs/4_vx_6}\label{<figure2>}}\\
+     \subfloat[][j]{\includegraphics[scale=0.45]{figs/5_vx_6}\label{<figure1>}}
+\end{figure}
+
 
 \section{Conclusões}
 Liste suas conclusões nesta seção, em vez de sim-plesmente relatar o que foi feito.
