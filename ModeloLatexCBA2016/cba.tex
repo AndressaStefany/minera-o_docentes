@@ -115,11 +115,24 @@ O \textit{k-Means} utiliza o conceito da centroíde para fazer o agrupamento dos 
 
 \subsection{Estratégia da Classificação}
 
+Para determinar o numero de clusters foi utilizado a metrica $R^2$
+\begin{center}
+$R^2=\frac{SSB}{SST}$\\
+$SSB=\sum_{i=1}^{g_k}{n_i||m_i-m||^2}$\\
+$SST=\sum_{i=1}^{g_k}{\sum_{j=1}^{n_i}{||x_{ij}-m_i||^2}}$
+\end{center}
+
+\begin{figure}[H]
+     \subfloat[][Graficos $R^2$]{\includegraphics[scale=0.45]{figs/R}\label{<figure2>}}\\
+     \subfloat[][Graficos $R_i^2-R_{i-1}^2$]{\includegraphics[scale=0.45]{figs/Rdiff}\label{<figure1>}}\\
+\end{figure}
+
+Aparti dos graficos é possivel perceber que o numero de clusters bom para esse problema é 3, onde tem a maior diferença variação de R.
+
 \subsection{Resultados}
 
-Classificação dois a dois
-
-\begin{figure}
+Os agrupamentos são mostrados a seguir, como o vetor de entrada tem 6 dimensões foi plotado graficos de duas variaveis por vez, assim é possivel ter uma noção da classificação geral.
+\begin{figure}[H]
      \centering
      \subfloat[][a]{\includegraphics[scale=0.45]{figs/2_vx_3}\label{<figure2>}}\\
      \subfloat[][b]{\includegraphics[scale=0.45]{figs/2_vx_4}\label{<figure1>}}\\
@@ -128,7 +141,7 @@ Classificação dois a dois
      \caption{Legenda}
      \label{steady_state}
 \end{figure}
-\begin{figure}
+\begin{figure}[H]
      \centering
      \subfloat[][e]{\includegraphics[scale=0.45]{figs/3_vx_4}\label{<figure2>}}\\
      \subfloat[][f]{\includegraphics[scale=0.45]{figs/3_vx_5}\label{<figure1>}}\\
@@ -137,10 +150,9 @@ Classificação dois a dois
      \caption{Legenda}
      \label{steady_state}
 \end{figure}
-
-\begin{figure}
+\begin{figure}[H]
      \subfloat[][i]{\includegraphics[scale=0.45]{figs/4_vx_6}\label{<figure2>}}\\
-     \subfloat[][j]{\includegraphics[scale=0.45]{figs/5_vx_6}\label{<figure1>}}
+     \subfloat[][j]{\includegraphics[scale=0.45]{figs/5_vx_6}\label{<figure1>}}\\
 \end{figure}
 
 
