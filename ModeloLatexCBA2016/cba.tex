@@ -98,14 +98,20 @@
 Com o advento da tecnologia, a geração de dados foi bastante impulsionada e assim existe uma vasta quantidade destes, porém, esse dado é encontrado em sua forma bruta, ou seja, não passou por um processamente o qual proporcione um significado, isto é, uma informação. Atualmente, é fácil encontrar na internet Data Sets disponíveis para a sociedade, a qual pode utilizá-lo para inúmeros fins, por exemplo: \textit{European Soccer Database} (Kaggle) o qual possui milhares de dados das temporadas europeias de 2008 a 2016, outro é o Gapminder que disponibiliza dados da Organização Mundial de Saúde, do Banco Mundial.
 
 % ajeitar a referencia
-A Mineração de Dados é o "desenvolvimento e a aplicação de técnicas que permitem analisar e obter
+A Mineração de Dados (\textit{Data Mining}) é o "desenvolvimento e a aplicação de técnicas que permitem analisar e obter
 conhecimentos novos e úteis a partir de grandes bases de dados", pois tem o objetivo de descobrir padrões nos dados através de um processo automático ou semiautomático e assim, obter significado importante de forma que proporcione alguma vantagem, a qual poderá ser: prever tendências e comportamentos de uma determinada empresa, dessa forma fazendo com quê seja possível a tomada de decisões proativas; detecção de fraude; campanhas de marketing; estudos de perfil de consumo; e na medicina, a indicação de diagnósticos mais precisos. Esses são apenas alguns exemplos, pois a Mineração de Dados está presente em muitas áreas, as três considerada com maior expressão são Estatística, Aprendizado de Máquina e Banco de Dados.
 
 Há métodos para que ocorra essa análise, alguns deles são: Agrupamento (\textit{Clustering}), Árvores de Decisão (\textit{Decision Trees}), Classificação Bayesiana (\textit{Bayesian Classification}), Classificação Baseada em Regras (\textit{Rule-Based Classification}), Redes Neurais (\textit{Neural Networks}), SVM (\textit{Support Vector Machines}), Algoritmo Genético (\textit{Genetic Algorithm}), Métodos Hierárquicos (\textit{Hierarchical Methods}) e Métodos de Particionamento (\textit{Partitioning Methods}), onde este último pode ser subdividido em \textit{k-Means} e \textit{k-Medoids}.
 
 Neste trabalho foi utilizado o Portal de Dados Abertos da Universidade Federal do Rio Grande do Norte - UFRN, especificamente a tabela que fornece dados da avaliação dos docentes, onde essa avaliação é com relação a vários anos levando em consideração todas as disciplinas lecionadas pelo professor. Para a mineração desses dados foi utilizado o método \textit{k-Means}, o qual divide em \textit{Clusters} os professores de acordo com os valores das colunas: quantidade de discentes, média da postura profissional, postura profissional no departamento, média da atuação profissional, atuação profissional no departamento, média da autoavaliação do aluno e autoavaliação do aluno no departamento.
 
-\subsection{Mineração de Dados com k-Means}
+\subsection{Mineração de Dados}
+
+\subsection{Ténica de Particionamento k-Means}
+
+Para a mineração dos dados obtidos no Portal de Dados Abertos da UFRN, com o intuito de classificação dos professores da instituição, foi utilizado uma técnica de agrupamento, onde após a obtenção de tais dados ouve o processo de criação de \textit{clusters} utilizando os registros mais semelhantes. O método utilizado nesse processo foi o de particionamento, mais precisamente: \textit{k-Means},  sendo ele considerado uma técnica não supervisionada.
+
+O \textit{k-Means} utiliza o conceito da centroíde para fazer o agrupamento dos dados. Primeiro é fornecido um conjunto de \textit{D} dados com \textit{n} registros e \textit{k}, onde este é o número de \textit{clusters} pré-estabelecidos. O algoritmo irá pegar aleatoriamente \textit{k} registros, os quais serão os representantes dos agrupamentos. Em seguida, é caculado a similariade dos resgistros restantes e os representantes, a cada iteração, é atualizado o representante utilizando o conceito de centroíde, ou seja, o centro de cada agrupamento, visto que está sendo pego a menor distância euclidiana entre o centro e o registro analisado no loop.
 
 \subsection{Estratégia da Classificação}
 
