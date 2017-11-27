@@ -51,7 +51,7 @@ for i in range(a):
                 plt.xlabel(var.columns[i+1])
                 plt.ylabel(var.columns[j+1])
             cont+=1
-            plt.savefig('figs/'+var.columns[i+1]+'x'+var.columns[j+1]+'.png')
+            plt.savefig('figs/'+str(i+1)+'_vx_'+str(j+1)+'.png')
 #print(var.head(5))
 tops= []
 for i in range(nclus):
