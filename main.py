@@ -51,6 +51,7 @@ for i in range(a):
                 plt.xlabel(var.columns[i+1])
                 plt.ylabel(var.columns[j+1])
             cont+=1
+            plt.savefig('figs/'+var.columns[i+1]+'x'+var.columns[j+1]+'.png')
 #print(var.head(5))
 tops= []
 for i in range(nclus):
@@ -61,6 +62,7 @@ for i in range(nclus):
     #print(n[n['nome_docente']==top5.keys()[0]].head(5))
     #print(n.nome_docente.value_counts()[:5])
 #plt.show()
+
 
 for i in range(nclus):
     for j in range(nclus):
