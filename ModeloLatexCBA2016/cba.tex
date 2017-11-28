@@ -142,8 +142,11 @@ Para a mineração dos dados obtidos no Portal de Dados Abertos da UFRN, com o int
 O \textit{k-Means} utiliza o conceito da centroíde para fazer o agrupamento dos dados. Primeiro é fornecido um conjunto de \textit{D} dados com \textit{n} registros e \textit{k}, onde este é o número de \textit{clusters} pré-estabelecidos. O algoritmo irá pegar aleatoriamente \textit{k} registros, os quais serão os representantes dos agrupamentos. Em seguida, é caculado a similariade dos resgistros restantes e os representantes, a cada iteração, é atualizado o representante utilizando o conceito de centroíde, ou seja, o centro de cada agrupamento, visto que está sendo pego a menor distância euclidiana entre o centro e o registro analisado no loop.
 
 \subsection{Estratégia da Classificação}
-
-Para determinar o numero de clusters foi utilizado a metrica $R^2$
+Com os dados obtidos das tabelas foi feito um tratamento inicial, onde selecionada as colunas de interesse, depois os dados foram normalizados segundo a equação:
+\begin{center}
+$x= \frac{x-\bar{x}}{\sigma_x}$
+\end{center}
+com isso garantimos que as variaveis tenha a mesma participação na clusterização, depois foi determinado o numero de clusters e pra isso foi utilizado a metrica $R^2$
 \begin{center}
 $R^2=\frac{SSB}{SST}$\\
 $SSB=\sum_{i=1}^{g_k}{n_i||m_i-m||^2}$\\
@@ -185,7 +188,8 @@ Os agrupamentos são mostrados a seguir, como o vetor de entrada tem 6 dimensões 
 
 
 \section{Conclusões}
-Liste suas conclusões nesta seção, em vez de sim-plesmente relatar o que foi feito.
+\cite{catch22}
+Aparti dos graficos podemos ver que a maioria das variaveis foram separadas apropriadamente, assim podemos dizer que a separação dos clusters foi boa.
 
 % BIBLIOGRAFIA
 \bibliography{exemplo}
