@@ -68,24 +68,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \author{Andressa Stéfany Silva de Oliveira}{astefanysoliveira@gmail.com}
+\address{Graduanda em Engenharia de Computação\\ Universidade Federal do Rio Grande do Norte - UFRN\\}
 
 \author{Vitor Ramos Gomes da Silva}{ramos.vitor89@gmail.com}
+\address{Graduando em Engenharia de Computação\\ Universidade Federal do Rio Grande do Norte - UFRN\\}
 
 \twocolumn[
 
 \maketitle
 
-\selectlanguage{english}
-\begin{abstract}
-  O processo de revisao do CBA 2014 sera DOUBLE BLIND, portanto NAO inclua
-  autores na versão que será submetida para revisão. Leve isso em consideração ao citar seus próprios trabalhos.  \end{abstract}
-
-\keywords{Template, Examples.}
-
 \selectlanguage{brazil}
 \begin{abstract}
-  O processo de revisao do CBA 2014 sera DOUBLE BLIND, portanto NAO inclua
-  autores na versão que será submetida para revisão. Leve isso em consideração ao citar seus próprios trabalhos.
+  O trabalho apresenta o contexto do mundo com relação a produção em massa de dados e um dos modos que a sociedade tem feito para diblar esse problema, nesse caso, a utilização da Mineração de Dados para a obtenção de informação. Além disso, é abordado o conceito e alguns métodos e técnicas utilizadas na Mineração de Dados dando ênfase na técnica não-supervisionada chamada \textit{k-Means}, possuindo também uma exemplificação de uso desta.
 \end{abstract}
 
 \keywords{Dados, Mineração, Clusters, k-Means.}
@@ -150,7 +144,7 @@ S_i  = \big \{ x_p : \big \| x_p - \mu^{(t)}_i \big \|^2 \le \big \| x_p - \mu^{
 \label{eqn:kmeans_assign_step}
 \end{equation}
 
-O calculo de centroid $\mu_i$ é a media de cada variavel no conjunto $S_i$
+O cálculo de centroid $\mu_i$ é a media de cada variavel no conjunto $S_i$
 \begin{equation}
 \mu_i = \frac{1}{|S_i|} \sum_{x_j \in S_i} x_j
 \label{eqn:kmeans_update_step}
@@ -177,11 +171,11 @@ Assim o método funciona da seguinte forma, dado um conjunto inicial de k medias 
 
 \subsection{Estratégia da Classificação}
 
-Com os dados obtidos das tabelas foi feito um tratamento inicial, onde selecionada as colunas de interesse, depois os dados foram normalizados segundo a equação:
+Com os dados obtidos das tabelas foi feito um tratamento inicial, onde é selecionado as colunas de interesse, depois os dados os quais foram normalizados segundo a equação:
 \begin{center}
 $x= \frac{x-\bar{x}}{\sigma_x}$
 \end{center}
-com isso garantimos que as variaveis tenha a mesma participação na clusterização, depois foi determinado o numero de clusters e pra isso foi utilizado a metrica $R^2$
+Com isso, garantimos que as variáveis teriam a mesma participação na clusterização, posteriormente, foi determinado o número de \textit{clusters} e, pra isso, utilizou-se a métrica $R^2$.
 \begin{center}
 $R^2=\frac{SSB}{SST}$\\
 $SSB=\sum_{i=1}^{g_k}{n_i||m_i-m||^2}$\\
@@ -189,45 +183,118 @@ $SST=\sum_{i=1}^{g_k}{\sum_{j=1}^{n_i}{||x_{ij}-m_i||^2}}$
 \end{center}
 
 \begin{figure}[H]
-     \subfloat[][$R^2$]{\includegraphics[scale=0.45]{figs/R}\label{fig:R}}\\
-     \subfloat[][$R_i^2-R_{i-1}^2$]{\includegraphics[scale=0.45]{figs/Rdiff}\label{fig:diffR}}\\
-     \caption{Graficos de $R^2$}
+     \subfloat[][$R^2$]{\includegraphics[scale=0.40]{figs/R}\label{fig:R}}\\
+     \subfloat[][$R_i^2-R_{i-1}^2$]{\includegraphics[scale=0.40]{figs/Rdiff}\label{fig:diffR}}\\
+     \caption{Gráficos de $R^2$}
      \label{fig:Rs}
 \end{figure}
 
-Observando os graficos \ref{fig:Rs} é possivel perceber que o numero de clusters bom para esse problema é 3, onde tem a maior diferença variação de R.
+Observando os gráficos \ref{fig:R} e \ref{fig:diffR} é possível perceber que 3 é um bom número de \textit{clusters} para esse problema, pois tem a maior diferença variação de R.
 
 \subsection{Resultados}
-Foi utilizado o algoritimo k-means já implementado pelo scipy (modulo do python) e os agrupamentos obtidos são mostrados a seguir. Como o vetor de entrada tem 6 dimensões foi plotado graficos de duas variaveis por vez, assim é possivel ter uma noção da classificação geral.
+
+Foi utilizado o algoritimo k-means que é implementado pelo scipy (módulo do Python) e os agrupamentos obtidos são mostrados a seguir. Como o vetor de entrada tem 6 dimensões, foi plotado gráficos de duas variáveis por vez, dessa forma se torna possível identificar a classificação geral.
+
+Os eixos podem assumir os seguintes dados com relação aos professores: Média da Postura Profissional (MPP), Postura Profissional no Departamento (PPD), Média de Atuação Profissional (MAP), Atuação Profissional no Departamento (APD), Média da Avaliação do Aluno (MAA), Média da Autoavaliação do Aluno (MATA).
+
+O gráfico \ref{fig:1} faz a relação da MPP e PPD; o \ref{fig:2}, MPP com a MAP; no \ref{fig:3}, é a MPP com a APD; \ref{fig:4}, é a MPP e a MAA; em \ref{fig:5}, tem-se a PPD e a MAP; no gráfico \ref{fig:6} é a PPD \textit{versus} a APD; em \ref{fig:7}, PPD e MATA; \ref{fig:8}, MAP com a APD; \ref{fig:9}, MAP \textit{versus} MATA; e, em  \ref{fig:10} APD com MATA.
+
 \begin{figure}[H]
      \centering
      \subfloat[]{\includegraphics[scale=0.45]{figs/2_vx_3}\label{fig:1}}\\
      \subfloat[]{\includegraphics[scale=0.45]{figs/2_vx_4}\label{fig:2}}\\
-     \subfloat[]{\includegraphics[scale=0.45]{figs/2_vx_5}\label{fig:3}}\\
-     \subfloat[]{\includegraphics[scale=0.45]{figs/2_vx_6}\label{fig:4}}\\
-     \caption{Legenda}
-     \label{steady_state}
+     \caption{Resultados da Clusterização}
+     \label{all0}
 \end{figure}
 \begin{figure}[H]
-     \centering
+     \centering     
+     \subfloat[]{\includegraphics[scale=0.45]{figs/2_vx_5}\label{fig:3}}\\
+     \subfloat[]{\includegraphics[scale=0.45]{figs/2_vx_6}\label{fig:4}}\\
      \subfloat[]{\includegraphics[scale=0.45]{figs/3_vx_4}\label{fig:5}}\\
      \subfloat[]{\includegraphics[scale=0.45]{figs/3_vx_5}\label{fig:6}}\\
-     \subfloat[]{\includegraphics[scale=0.45]{figs/3_vx_6}\label{fig:7}}\\
-     \subfloat[]{\includegraphics[scale=0.45]{figs/4_vx_5}\label{fig:8}}\\
-     \caption{Resultados da clusterização}
+     \caption{Continuação dos Resultados da Clusterização}
      \label{fig:all1}
 \end{figure}
 \begin{figure}[H]
+	 \subfloat[]{\includegraphics[scale=0.45]{figs/3_vx_6}\label{fig:7}}\\
+     \subfloat[]{\includegraphics[scale=0.45]{figs/4_vx_5}\label{fig:8}}\\
      \subfloat[]{\includegraphics[scale=0.45]{figs/4_vx_6}\label{fig:9}}\\
      \subfloat[]{\includegraphics[scale=0.45]{figs/5_vx_6}\label{fig:10}}\\
-     \caption{Resultados da clusterização}
+     \caption{Continuação dos Resultados da Clusterização}
      \label{fig:all2}
 \end{figure}
+
+Nos gráficos mostrados acima, cada ponto representa os professores da UFRN e as cores representam os \textit{Clusters}, sendo a cor vermelha um \textit{Cluster}, a azul outro e o verde outro \textit{Cluster} distinto. Essa divisão tem a classificação de ruim, regular e bom professor de acordo com os dados das avaliações.
+
+Outro ponto importante é saber que os professores aparecem mais de uma vez em vários \textit{clusters}, pois a avaliação é feita de acordo com as turmas lecionadas o que acarreta em várias avaliações, para a classificação do \textit{cluster} que um determinado professor pertence foi considerado o maior número de aparições.
+
+Visando uma melhor interpretação e compreensão dos resultando, todo o processo explicado anteriormente foi utilizado apenas com professores do Departamento de Engenharia de Computação e Automação, chegando na seguinte divisão:
+
+\begin{itemize}
+\item \textit{Cluster} 0:
+\end{itemize}
+
+\hspace{8pt} \verb+FABIO MENEGHETTI UGULINO DE ARAUJO+
+
+\hspace{8pt} \verb+SAMUEL XAVIER DE SOUZA+
+
+\hspace{8pt} \verb+LUIZ AFFONSO HENDERSON GUEDES DE OLIVEIRA+
+
+\hspace{8pt} \verb+AGOSTINHO DE MEDEIROS BRITO JUNIOR+
+
+\hspace{8pt} \verb+ANDRES ORTIZ SALAZAR+
+
+\hspace{8pt} \verb+DANIEL ALOISE+
+
+\hspace{8pt} \verb+ANDRÉ LAURINDO MAITELLI+
+
+\hspace{8pt} \verb+MANOEL FIRMINO DE MEDEIROS JUNIOR+
+
+\hspace{8pt} \verb+LUIZ MARCOS GARCIA GONCALVES+
+
+\hspace{8pt} \verb+CARLOS EDUARDO TRABUCO DOREA+
+
+\begin{itemize}
+\item \textit{Cluster} 1:
+\end{itemize}
+
+\hspace{8pt} \verb+DIOGO PINHEIRO FERNANDES PEDROSA+
+
+\hspace{8pt} \verb+ANDERSON LUIZ DE OLIVEIRA CAVALCANTI+
+
+\hspace{8pt} \verb+JOAO BATISTA BEZERRA+
+
+\hspace{8pt} \verb+SEBASTIAN YURI CAVALCANTI CATUNDA+
+
+
+\begin{itemize}
+\item \textit{Cluster} 2:
+\end{itemize}
+
+\hspace{8pt} \verb+PAULO SERGIO DA MOTTA PIRES+
+
+\hspace{8pt} \verb+PABLO JAVIER ALSINA+
+
+\hspace{8pt} \verb+FRANCISCO DAS CHAGAS MOTA+
+
+\hspace{8pt} \verb+RICARDO FERREIRA PINHEIRO+
+
+\hspace{8pt} \verb+LUIZ FELIPE DE QUEIROZ SILVEIRA+
+
+\hspace{8pt} \verb+MARCELO AUGUSTO COSTA FERNANDES+
+
+\hspace{8pt} \verb+ANDRES ORTIZ SALAZAR+
+
+\hspace{8pt} \verb+ADELARDO ADELINO DANTAS DE MEDEIROS+
+
+\hspace{8pt} \verb+CARLOS MANUEL DIAS VIEGAS+
+
+\hspace{8pt} \verb+ADRIAO DUARTE DORIA NETO+
 
 
 \section{Conclusões}
 
-A parti dos gráficos \ref{fig:all1} e \ref{fig:all2} podemos ver que a maioria das variáveis foram separadas apropriadamente, assim podemos dizer que a separação dos clusters foi boa.
+A partir dos gráficos \ref{fig:Rs}, a qual informa o número bom para a separação dos dados, mais os gráficos dos Resultados da Clusterização, no item Resultados, é possível ver que a maioria das variáveis foram separadas apropriadamente, ou seja, classificadas conforme os seus valores, então, se faz notório que a aglomeração dos clusters foi boa.
 
 % BIBLIOGRAFIA
 \bibliography{exemplo}
