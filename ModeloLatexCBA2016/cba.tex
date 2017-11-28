@@ -157,41 +157,46 @@ $SST=\sum_{i=1}^{g_k}{\sum_{j=1}^{n_i}{||x_{ij}-m_i||^2}}$
 \end{center}
 
 \begin{figure}[H]
-     \subfloat[][Graficos $R^2$]{\includegraphics[scale=0.45]{figs/R}\label{<figure2>}}\\
-     \subfloat[][Graficos $R_i^2-R_{i-1}^2$]{\includegraphics[scale=0.45]{figs/Rdiff}\label{<figure1>}}\\
+     \subfloat[][$R^2$]{\includegraphics[scale=0.45]{figs/R}\label{fig:R}}\\
+     \subfloat[][$R_i^2-R_{i-1}^2$]{\includegraphics[scale=0.45]{figs/Rdiff}\label{fig:diffR}}\\
+     \caption{Graficos de $R^2$}
+     \label{fig:Rs}
 \end{figure}
 
-A partir dos graficos é possivel perceber que o numero de clusters bom para esse problema é 3, onde tem a maior diferença variação de R.
+Observando os graficos \ref{fig:Rs} é possivel perceber que o numero de clusters bom para esse problema é 3, onde tem a maior diferença variação de R.
 
 \subsection{Resultados}
 
 Os agrupamentos são mostrados a seguir, como o vetor de entrada tem 6 dimensões foi plotado graficos de duas variaveis por vez, assim é possivel ter uma noção da classificação geral.
 \begin{figure}[H]
      \centering
-     \subfloat[][a]{\includegraphics[scale=0.45]{figs/2_vx_3}\label{<figure2>}}\\
-     \subfloat[][b]{\includegraphics[scale=0.45]{figs/2_vx_4}\label{<figure1>}}\\
-     \subfloat[][c]{\includegraphics[scale=0.45]{figs/2_vx_5}\label{<figure2>}}\\
-     \subfloat[][d]{\includegraphics[scale=0.45]{figs/2_vx_6}\label{<figure1>}}\\
+     \subfloat[]{\includegraphics[scale=0.45]{figs/2_vx_3}\label{fig:1}}\\
+     \subfloat[]{\includegraphics[scale=0.45]{figs/2_vx_4}\label{fig:2}}\\
+     \subfloat[]{\includegraphics[scale=0.45]{figs/2_vx_5}\label{fig:3}}\\
+     \subfloat[]{\includegraphics[scale=0.45]{figs/2_vx_6}\label{fig:4}}\\
      \caption{Legenda}
      \label{steady_state}
 \end{figure}
 \begin{figure}[H]
      \centering
-     \subfloat[][e]{\includegraphics[scale=0.45]{figs/3_vx_4}\label{<figure2>}}\\
-     \subfloat[][f]{\includegraphics[scale=0.45]{figs/3_vx_5}\label{<figure1>}}\\
-     \subfloat[][g]{\includegraphics[scale=0.45]{figs/3_vx_6}\label{<figure2>}}\\
-     \subfloat[][h]{\includegraphics[scale=0.45]{figs/4_vx_5}\label{<figure1>}}\\
-     \caption{Legenda}
-     \label{steady_state}
+     \subfloat[]{\includegraphics[scale=0.45]{figs/3_vx_4}\label{fig:5}}\\
+     \subfloat[]{\includegraphics[scale=0.45]{figs/3_vx_5}\label{fig:6}}\\
+     \subfloat[]{\includegraphics[scale=0.45]{figs/3_vx_6}\label{fig:7}}\\
+     \subfloat[]{\includegraphics[scale=0.45]{figs/4_vx_5}\label{fig:8}}\\
+     \caption{Resultados da clusterização}
+     \label{fig:all1}
 \end{figure}
 \begin{figure}[H]
-     \subfloat[][i]{\includegraphics[scale=0.45]{figs/4_vx_6}\label{<figure2>}}\\
-     \subfloat[][j]{\includegraphics[scale=0.45]{figs/5_vx_6}\label{<figure1>}}\\
+     \subfloat[]{\includegraphics[scale=0.45]{figs/4_vx_6}\label{fig:9}}\\
+     \subfloat[]{\includegraphics[scale=0.45]{figs/5_vx_6}\label{fig:10}}\\
+     \caption{Resultados da clusterização}
+     \label{fig:all2}
 \end{figure}
 
 
 \section{Conclusões}
-Aparti dos graficos podemos ver que a maioria das variaveis foram separadas apropriadamente, assim podemos dizer que a separação dos clusters foi boa.
+
+A parti dos gráficos \ref{fig:all1} e \ref{fig:all2} podemos ver que a maioria das variáveis foram separadas apropriadamente, assim podemos dizer que a separação dos clusters foi boa.
 
 % BIBLIOGRAFIA
 \bibliography{exemplo}
