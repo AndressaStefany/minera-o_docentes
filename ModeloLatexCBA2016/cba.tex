@@ -141,7 +141,39 @@ Para a mineração dos dados obtidos no Portal de Dados Abertos da UFRN, com o int
 
 O \textit{k-Means} utiliza o conceito da centroíde para fazer o agrupamento dos dados. Primeiro é fornecido um conjunto de \textit{D} dados com \textit{n} registros e \textit{k}, onde este é o número de \textit{clusters} pré-estabelecidos. O algoritmo irá pegar aleatoriamente \textit{k} registros, os quais serão os representantes dos agrupamentos. Em seguida, é caculado a similariade dos resgistros restantes e os representantes, a cada iteração, é atualizado o representante utilizando o conceito de centroíde, ou seja, o centro de cada agrupamento, visto que está sendo pego a menor distância euclidiana entre o centro e o registro analisado no loop.
 
+Matematicamente o vetor $x_p$ é associado ao conjunto $S_i$ quando, onde $\mu_l$ é o centroide do conjunto l.
+\begin{equation}
+S_i  = \big \{ x_p : \big \| x_p - \mu^{(t)}_i \big \|^2 \le \big \| x_p - \mu^{(t)}_j \big \|^2 \ \forall j, 1 \le j \le k \big\}
+\label{eqn:kmeans_assign_step}
+\end{equation}
+
+O calculo de centroid $\mu_i$ é a media de cada variavel no conjunto $S_i$
+\begin{equation}
+\mu_i = \frac{1}{|S_i|} \sum_{x_j \in S_i} x_j
+\label{eqn:kmeans_update_step}
+\end{equation}
+
+O algoritmo do k-means tenta otimizar a função objetivo \ref{eqn:kmeans_objective_function}. Como há apenas um número finito de atribuições para a quantidade de centróides e observações disponíveis e cada iteração deve resultar em melhor solução, o algoritmo sempre termina em um mínimo local.
+\begin{equation}
+J = \sum_{n=1}^{N} \sum_{k=1}^{K} r_{nk} ||x_n - \mu_k||^2
+\label{eqn:kmeans_objective_function}
+\end{equation}
+\[
+\text{com } \\
+r_{nk} = \begin{cases}
+%1 & \text{if } k = \arg \min_j ||x_n - \mu_j||^2 \\
+1 & x_n \in S_k \\
+0 & \text{caso contrario}
+\end{cases}
+\]
+
+Os métodos de inicialização mais utilizados são Forgy e Random Partition, no método de Forgy são selecionados n amostras do conjunto inicial e atribuido a elas os n conjuntos iniciais.No método de Random Partition as medias dos conjuntos iniciais são atribuidos de forma aleatoria.
+
+Assim o método funciona da seguinte forma, dado um conjunto inicial de k medias $m_1,m_2,..,m_k$ o algoritimo alterna entre dois estados, atribuição dos vetores aos conjuntos segundo a equação \ref{eqn:kmeans_assign_step} e atualização dos centroides pela equação \ref{eqn:kmeans_update_step} até que o criterio de parada seja atingido, um dos criterios é quando nenhum grupo muda de uma iteração para outra.
+
+
 \subsection{Estratégia da Classificação}
+
 Com os dados obtidos das tabelas foi feito um tratamento inicial, onde selecionada as colunas de interesse, depois os dados foram normalizados segundo a equação:
 \begin{center}
 $x= \frac{x-\bar{x}}{\sigma_x}$
@@ -163,8 +195,7 @@ $SST=\sum_{i=1}^{g_k}{\sum_{j=1}^{n_i}{||x_{ij}-m_i||^2}}$
 Observando os graficos \ref{fig:Rs} é possivel perceber que o numero de clusters bom para esse problema é 3, onde tem a maior diferença variação de R.
 
 \subsection{Resultados}
-
-Os agrupamentos são mostrados a seguir, como o vetor de entrada tem 6 dimensões foi plotado graficos de duas variaveis por vez, assim é possivel ter uma noção da classificação geral.
+Foi utilizado o algoritimo k-means já implementado pelo scipy (modulo do python) e os agrupamentos obtidos são mostrados a seguir. Como o vetor de entrada tem 6 dimensões foi plotado graficos de duas variaveis por vez, assim é possivel ter uma noção da classificação geral.
 \begin{figure}[H]
      \centering
      \subfloat[]{\includegraphics[scale=0.45]{figs/2_vx_3}\label{fig:1}}\\
