@@ -1,4 +1,5 @@
 \documentclass[conference,harvard,brazil,english]{sbatex}
+\usepackage{url}
 \usepackage[latin1]{inputenc}
 \usepackage{graphicx}
 \usepackage{subfig}
@@ -97,19 +98,19 @@
 \section{Introdução}
 Com o advento da tecnologia, a geração de dados foi bastante impulsionada e assim existe uma vasta quantidade destes, porém, esse dado é encontrado em sua forma bruta, ou seja, não passou por um processamente o qual proporcione um significado, isto é, uma informação. Atualmente, é fácil encontrar na internet Data Sets disponíveis para a sociedade, a qual pode utilizá-lo para inúmeros fins, por exemplo: \textit{European Soccer Database} (Kaggle) o qual possui milhares de dados das temporadas europeias de 2008 a 2016, outro é o Gapminder que disponibiliza dados da Organização Mundial de Saúde, do Banco Mundial.
 
-A Mineração de Dados (\textit{Data Mining}) é o "desenvolvimento e a aplicação de técnicas que permitem analisar e obter conhecimentos novos e úteis a partir de grandes bases de dados"(Luiz A. V. C. Meyer apud Bezerra e Goldsmith), pois tem o objetivo de descobrir padrões nos dados através de um processo automático ou semiautomático e assim, obter significado importante de forma que proporcione alguma vantagem, a qual poderá ser: prever tendências e comportamentos de uma determinada empresa, dessa forma fazendo com quê seja possível a tomada de decisões proativas; detecção de fraude; campanhas de marketing; estudos de perfil de consumo; e na medicina, a indicação de diagnósticos mais precisos.
+A Mineração de Dados (\textit{Data Mining}) é o "desenvolvimento e a aplicação de técnicas que permitem analisar e obter conhecimentos novos e úteis a partir de grandes bases de dados" \cite{meyer}, pois tem o objetivo de descobrir padrões nos dados através de um processo automático ou semiautomático e assim, obter significado importante de forma que proporcione alguma vantagem, a qual poderá ser: prever tendências e comportamentos de uma determinada empresa, dessa forma fazendo com quê seja possível a tomada de decisões proativas; detecção de fraude; campanhas de marketing; estudos de perfil de consumo; e na medicina, a indicação de diagnósticos mais precisos.
 
-Esses são apenas alguns exemplos, pois a Mineração de Dados está presente em muitas áreas, as três considerada com maior expressão são Estatística, Inteligência Artificial e Banco de Dados. [Marcelino Pereira]
+Esses são apenas alguns exemplos, pois a Mineração de Dados está presente em muitas áreas, as três considerada com maior expressão são Estatística, Inteligência Artificial e Banco de Dados \cite{marcelino}.
 
 Há métodos para que ocorra essa análise, alguns deles são: Árvores de Decisão (\textit{Decision Trees}), Classificação Bayesiana (\textit{Bayesian Classification}), Classificação Baseada em Regras (\textit{Rule-Based Classification}), Redes Neurais (\textit{Neural Networks}), Algoritmo Genético (\textit{Genetic Algorithm}), Regressão Linear, Regressão Não-Linear, Métodos Hierárquicos (\textit{Hierarchical Methods}) e Métodos de Particionamento (\textit{Partitioning Methods}), onde este último pode ser subdividido em \textit{k-Means} e \textit{k-Medoids}.
 
-Neste trabalho foi utilizado o Portal de Dados Abertos da Universidade Federal do Rio Grande do Norte - UFRN, especificamente a tabela que fornece dados da avaliação dos docentes, onde essa avaliação é com relação a vários anos levando em consideração todas as disciplinas lecionadas pelo professor. Para a mineração desses dados foi utilizado o método \textit{k-Means}, o qual divide em \textit{Clusters} os professores de acordo com os valores das colunas: quantidade de discentes, média da postura profissional, postura profissional no departamento, média da atuação profissional, atuação profissional no departamento, média da autoavaliação do aluno e autoavaliação do aluno no departamento.
+Neste trabalho foi utilizado o Portal de Dados Abertos da Universidade Federal do Rio Grande do Norte - UFRN, especificamente a tabela que fornece dados da avaliação dos docentes, onde essa avaliação é com relação a vários anos levando em consideração todas as disciplinas lecionadas pelo professor. Para a mineração desses dados foi utilizado o método \textit{k-Means}, o qual divide em \textit{Clusters} os professores de acordo com os valores das colunas: quantidade de discentes, média da postura profissional, postura profissional no departamento, média da atuação profissional, atuação profissional no departamento, média da autoavaliação do aluno e autoavaliação do aluno no departamento \cite{dados}.
 
 \subsection{Mineração de Dados}
 
-Uma área que tem se mostrado alvo de muitas pesquisas e estudos é a Mineração de Dados (\textit{Data Mining}). Ela se tornou fundamental na busca de valiosas informações, visto que existe muitos dados gerados em uma alta velocidade em todo o mundo. Porém, para isso, ainda se faz necessária a intervenção do homem, pois apesar da eficiência de muitos algoritmos ainda há a necessidade da interpretação humana.[Sergio da Costa Cortês]
+Uma área que tem se mostrado alvo de muitas pesquisas e estudos é a Mineração de Dados (\textit{Data Mining}). Ela se tornou fundamental na busca de valiosas informações, visto que existe muitos dados gerados em uma alta velocidade em todo o mundo. Porém, para isso, ainda se faz necessária a intervenção do homem, pois apesar da eficiência de muitos algoritmos ainda há a necessidade da interpretação humana \cite{sergiocortes}.
 
-A Mineração de Dados pode ser considerada como a união da estatística, inteligência artificial e banco de dados, como pode ser observada na figura \ref{fig:union} , pois suas técnicas e algoritmos utilizados abragem principalmente as áreas mostrada na figura. [Marcelino Pereira]
+A Mineração de Dados pode ser considerada como a união da estatística, inteligência artificial e banco de dados, como pode ser observada na figura \ref{fig:union} , pois suas técnicas e algoritmos utilizados abragem principalmente as áreas mostrada na figura \cite{marcelino}.
 
 \begin{figure}[h]
 	\centering
@@ -131,7 +132,9 @@ A Predição também é parecida com a classificação e com a estimação, tendo o intu
 
 A associação tem o objetivo de juntos os dados que estão relacionado, por exemplo, identificar os usuários de um determinado plano que respondem bem a oferta de novos serviços.
 
-O agrupamento \textit{Clustering} tem a função de identificar e aproximar os registro similares, para isso não se faz necessário que registros sejam previamente categorizados, fazendo parte do aprendizado não-supervisionado. Com relação ao agrupamento, algumas técnicas são os métodos de particionamento, hierárquicos, baseados na densidade, baseados em grade e baseados em modelos. [Camilo]
+O agrupamento \textit{Clustering} tem a função de identificar e aproximar os registro similares, para isso não se faz necessário que registros sejam previamente categorizados, fazendo parte do aprendizado não-supervisionado. Com relação ao agrupamento, algumas técnicas são os métodos de particionamento, hierárquicos, baseados na densidade, baseados em grade e baseados em modelos \cite{cassio}.
+
+Ademais, o reconhecimento de padrões é classificado como aprendizado supervisionado, que necessita de informações sobre exemplos típicos de cada classe e assim conseguir identificar e classificar, e aprendizado não-supervisionado, diferentemente do anterior, não precisa de exemplos prévios para a identificação dos padrões dos dados \cite{miriam}.
 
 Este trabalho utilizou o agrupamento com o método de particionamento, o qual é subdividido em \textit{k-Means} e \textit{k-Medoids}, onde o primeiro trabalha com o centroíde e o segundo com o elemento mais central do \textit{Cluster}.
 
@@ -188,7 +191,6 @@ Os agrupamentos são mostrados a seguir, como o vetor de entrada tem 6 dimensões 
 
 
 \section{Conclusões}
-\cite{catch22}
 Aparti dos graficos podemos ver que a maioria das variaveis foram separadas apropriadamente, assim podemos dizer que a separação dos clusters foi boa.
 
 % BIBLIOGRAFIA
